@@ -12,8 +12,8 @@ class Card extends React.Component{
     }
 
     drag(e){
-        const {text,positive,negative} = this.props.data
-        e.dataTransfer.setData("data", [text,positive,negative] );
+        const {text,positive,negative,date} = this.props.data
+        e.dataTransfer.setData("data", [text,positive,negative,date] );
     }
 
     delete(){

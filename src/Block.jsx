@@ -20,8 +20,9 @@ class Block extends React.Component{
   drop(e){
     e.preventDefault();
     const dragData = e.dataTransfer.getData("data").split(",");
+    console.log(dragData);
     const { data = [] } = this.state;
-    data.push({key: performance.now(),text:dragData[0],date: Date.now(),
+    data.push({key: performance.now(),text:dragData[0],date: +dragData[3],
       positive:dragData[1],negative:dragData[2],edit:false});
     this.setState({data: data});
   }
